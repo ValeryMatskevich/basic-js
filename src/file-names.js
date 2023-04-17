@@ -19,12 +19,12 @@ function renameFiles(names) {
   let namesObj = {};
   for (let i = 0; i < names.length; i++) {
     let curr = names[i];
-    if (!Object.keys(namesObj).includes(names[i])) {
-      namesObj[names[i]] = 1;
-    } else if (Object.keys(namesObj).includes(names[i])) {
-      let newFile = names[i] + `(${namesObj[names[i]]})`;
+    if (!Object.keys(namesObj).includes(curr)) {
+      namesObj[curr] = 1;
+    } else if (Object.keys(namesObj).includes(curr)) {
+      let newFile = curr + `(${namesObj[curr]})`;
       namesObj[newFile] = 1;
-      namesObj[names[i]] += 1;
+      namesObj[curr] += 1;
     }
   }
   return Object.keys(namesObj);
